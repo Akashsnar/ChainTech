@@ -36,3 +36,35 @@
     transform: rotate(360deg);
   }
 }
+
+body{
+  padding-top: 2rem;
+margin-left: 5rem;
+margin-right: 5rem;
+background: #ffa07a; 
+}
+
+button{
+  background-color: #ff8c00; 
+}
+
+button[type=submit]{
+  background-color: green;
+}
+
+button[type=submit]:hover{
+  background-color: green;
+}
+/* 
+.nav-pills .nav-link:active{
+  background-color: #ff8c00;
+} */
+.nav-pills .nav-link{
+  color: #ff8c00;
+}
+
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+  color: var(--bs-nav-pills-link-active-color);
+  background-color: #ff8c00;
+}

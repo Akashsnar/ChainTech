@@ -1,25 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import LoginPage from './components/LoginPage';
+import RegistrationPage from './components/RegistrationPage';
+import ProfilePage from './components/ProfilePage';
+import User from './components/User'
+import {NotificationContainer, NotificationManager} from 'react-notifications';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+          <NotificationContainer/>
+      <div>
+        <Routes>
+        <Route path="/" element={<RegistrationPage/>} />
+          <Route path="/login" element={<LoginPage/>} />
+          <Route path="/registration" element={<RegistrationPage/>} />
+          <Route path="/profile" element={<ProfilePage/>} />
+          <Route path="/home" element={<User/>} editable={false}/>
+          <Route path='/editdetails' element={<User/>} key={'editdetails'} editable={true}/>
+
+        </Routes>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
